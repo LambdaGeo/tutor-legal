@@ -1,25 +1,10 @@
 package rules;
- 
-import br.ufma.ecp.sistemalegal.Sale;
 
 import br.ufma.ecp.sistemalegal.NaturezaCrime;
 import br.ufma.ecp.sistemalegal.Reclusao;
 
 dialect "mvel"
  
-rule "DiscountForCarSale"
-    when
-        thisSale : Sale (quantity >= 5 , item == "Car");
-    then
-        thisSale.setDiscount(10);
-end;
- 
-rule "DiscountForBikeSale"
-    when
-        thisSale : Sale (quantity >= 10 , item == "Bike");
-    then
-        thisSale.setDiscount(15);
-end;
 
 
 
