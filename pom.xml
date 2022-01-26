@@ -14,9 +14,24 @@
 	<name>sistemalegal</name>
 	<description>tutor para o estudo de legislação</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
+		<kie.version>7.53.0.Final</kie.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>${kie.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-spring</artifactId>
+			<version>${kie.version}</version>
+		</dependency>
+
+		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
