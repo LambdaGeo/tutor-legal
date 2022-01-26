@@ -1,6 +1,6 @@
 package rules;
  
-import com.github.mnadeem.discount.model.Sale;
+import br.ufma.ecp.sistemalegal.Sale;
  
 rule "DiscountForCarSale"
     when
