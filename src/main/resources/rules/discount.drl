@@ -1,6 +1,11 @@
 package rules;
  
 import br.ufma.ecp.sistemalegal.Sale;
+
+import br.ufma.ecp.sistemalegal.NaturezaCrime;
+import br.ufma.ecp.sistemalegal.Reclusao;
+
+dialect "mvel"
  
 rule "DiscountForCarSale"
     when
@@ -15,3 +20,21 @@ rule "DiscountForBikeSale"
     then
         thisSale.setDiscount(15);
 end;
+
+
+
+
+
+rule "Grave"
+
+	// quando tiver um objeto do tipo pessoa na memória
+    when
+        p: NaturezaCrime(tipo == "Grave")
+        r: Reclusao ()
+    then
+		r.setAnos(12)
+end
+
+
+
+

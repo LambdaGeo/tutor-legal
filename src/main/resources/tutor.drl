@@ -1,0 +1,34 @@
+package rules;
+
+import br.ufma.ecp.sistemalegal.NaturezaCrime;
+import br.ufma.ecp.sistemalegal.Reclusao;
+
+
+rule "Reclusao"
+
+	// quando tiver um objeto do tipo pessoa na memória
+    when
+        p: Reclusao()
+    then
+		System.out.println("Reclusao " + p.getAnos());
+end
+
+rule "Grave"
+
+	// quando tiver um objeto do tipo pessoa na memória
+    when
+        p: NaturezaCrime(tipo == "Grave")
+    then
+		insert(new Reclusao(12))
+end
+
+// quanto ao efeito ?
+
+rule "Aceleracao"
+ when
+        p: Efeito (valor == "Aceleração do Parto")
+ then
+    	insert(new NaturezaCrime("Grave"))     
+   
+
+end
